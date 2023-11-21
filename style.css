@@ -1,0 +1,125 @@
+/* styles.css */
+
+body {
+    font-family: 'comic sans ms'
+    ;font-weight: normal;
+}
+
+fieldset {
+    margin-bottom: 15px;
+    border: 2px solid #ddd; /* Light grey border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 55px;
+    transition: all 0.3s ease; /* Smooth transition effect */
+}
+
+div {
+    font-weight: bold;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+h2 {
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+#Subclinical {
+    background-color: #8BC34A; /* Green */
+}
+
+#MildCase {
+    background-color: #FFC107; /* Yellow */
+}
+
+#ModerateCase {
+    background-color: #FF9800; /* Orange */
+}
+
+#SevereCase {
+    background-color: #F44336; /* Red */
+}
+
+#ExtremeCase {
+    background-color: #673AB7; /* Purple */
+}
+
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+/* Highlight incomplete answers in red */
+fieldset.incomplete {
+    border: 2px solid #F44336; /* Red border */
+    box-shadow: 0 0 10px #F44336; /* Red box shadow */
+    background-color: #f0f0f0; /* White background */
+    color:black ; /* Red text */
+}
+
+/* Highlight complete answers in green */
+fieldset.complete {
+    border: 2px solid #8BC34A; /* Green border */
+    box-shadow: 0 0 10px #8BC34A; /* Green box shadow */
+    background-color: #8BC34A; /* White background */
+    color:white ; /* Green text */
+}
+
+#requiredMessage {
+    color: red;
+    display: none;
+    margin-top: 20px;
+}
+
+#resultContainer {
+    margin-top: 20px;
+}
+
+/* Smooth hover effect */
+fieldset:hover {
+    box-shadow: 0 0 15px #ddd; /* Light grey box shadow on hover */
+}
+.question-label {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+fieldset {
+    transition: background-color 0.3s ease;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+
+
+/* style.css */
+
+/* Styling for Submit button */
+input[type="button"] {
+    padding: 10px;
+    background-color: #4CAF50; /* Green background color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px; /* Add some margin to separate buttons */
+}
+
+/* Styling for Reset button */
+#resetButton{
+    padding: 10px;
+    background-color: #f44336; /* Red background color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

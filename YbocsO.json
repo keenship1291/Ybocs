@@ -1,0 +1,125 @@
+[{
+    "question": "How much of your time is occupied by obsessive thoughts?",
+    "option1":" 0 = None    ",
+    "option2":" 1 =  Less than 1 hr/day or occasional occurrence    ",
+    "option3":" 2 = 1 to 3 hrs/day or frequent  ",
+    "option4":" 3 = Greater than 3 and up to 8 hrs/day or very frequent occurrence  ",
+    "option5":" 4 = Greater than 8 hrs/day or nearly constant occurrence    "
+    },
+ 
+    
+        {
+            "question": "How much do your obsessive thoughts interfere with your work, school, social, or other important role functioning? Is there anything that you do not do because of them?",
+            "option1":" 0 = None    ",
+            "option2":" 1 =  Slight interference with social or other activities, but overall performance not impaired ",
+            "option3":" 2 = Definite interference with social or occupational performance,but still manageable ",
+            "option4":" 3 = Causes substantial impairment in social or occupational performance",
+            "option5":" 4 = Incapacitating"
+            },
+            
+        {
+            "question": "How much distress do your obsessive thoughts cause you?",
+            "option1":" 0 = None    ",
+            "option2":" 1 =  Not too disturbing ",
+            "option3":" 2 = Disturbing, but still manageable",
+            "option4":" 3 = Very disturbing ",
+            "option5":" 4 = Near constant and disabling distress"
+            },
+        
+            {
+                "question": "How much of an effort do you make to resist the obsessive thoughts? How often do you try to disregard or turn your attention away from these thoughts as they enter your mind? ",
+                "option1":" 0 = Try to resist all the time                 ",
+                "option2":" 1 =  Try to resist most of the time ",
+                "option3":" 2 = Make some effort to resist                 ",
+                "option4":" 3 = Yield to all obsessions without attempting to control them, but with some reluctance ",
+                "option5":" 4 = Completely and willingly yield to all obsessions "
+                },
+                {
+                    "question": "How much control do you have over your obsessive thoughts? How successful are you in stopping or diverting your obsessive thinking? Can you dismiss them? ",
+                    "option1":" 0 = Complete control    ",
+                    "option2":" 1 =  Usually able to stop or divert obsessions with some effort and concentration ",
+                    "option3":" 2 = Sometimes able to stop or divert obsessions",
+                    "option4":" 3 = Rarely successful in stopping or dismissing obsessions, can only divert attention with difficulty",
+                    "option5":" 4 = Obsessions are completely involuntary, rarely able to even momentarily alter obsessive thinking.  "
+                    }
+                
+                
+            
+            
+                    ,{
+                        "question": "How much time do you spend performing compulsive behaviors? How much longer than most people does it take to complete routine activities because of your rituals? How frequently do you do rituals?",
+                        "option1":" 0 = None    ",
+                        "option2":" 1 = Less than 1 hr/day or occasional performance of compulsive behaviors     ",
+                        "option3":" 2 = From 1 to 3 hrs/day, or frequent performance of compulsive behaviors  ",
+                        "option4":" 3 = More than 3 and up to 8 hrs/day, or very frequent performance of compulsive behaviors   ",
+                        "option5":" 4 = More than 8 hrs/day, or near constant performance of compulsive behaviors (too numerous to count)     "
+                        },
+                     
+                        
+                            {
+                                "question": "How much do your compulsive behaviors interfere with your work, school, social, or other important rolefunctioning? Is there anything that you do not do because of the compulsions?",
+                                "option1":" 0 = None    ",
+                                "option2":" 1 =  Slight interference with social or other activities, but overall performance not impaired ",
+                                "option3":" 2 = Definite interference with social or occupational performance, but still manageable ",
+                                "option4":" 3 = Causes substantial impairment in social or occupational performance",
+                                "option5":" 4 = Incapacitating"
+                                },
+                                
+                            {
+                                "question": "How would you feel if prevented from performing your compulsion(s)? How anxious would you become?",
+                                "option1":" 0 = None    ",
+                                "option2":" 1 =  Only slightly anxious if compulsions prevented ",
+                                "option3":" 2 = Anxiety would mount but remain manageable if compulsions prevented",
+                                "option4":" 3 = Prominent and very disturbing increase in anxiety if compulsions interrupted  ",
+                                "option5":" 4 = Incapacitating anxiety from any intervention aimed at modifying activity"
+                                },
+                            
+                                {
+                                    "question": "How much of an effort do you make to resist the compulsions? ",
+                                    "option1":" 0 = Always try to resist                ",
+                                    "option2":" 1 =  Try to resist most of the time ",
+                                    "option3":" 2 = Make some effort to resist                 ",
+                                    "option4":" 3 = Yield to almost all compulsions without attempting to control them, but with some reluctance ",
+                                    "option5":" 4 = Completely and willingly yield to all compulsions "
+                                    },
+                                    {
+                                        "question": "How strong is the drive to perform the compulsive behavior? How much control do you have over the compulsions?                      ",
+                                        "option1":" 0 = Complete control    ",
+                                        "option2":" 1 =  Pressure to perform the behavior but usually able to exercise voluntary control over it ",
+                                        "option3":" 2 = Strong pressure to perform behavior, can control it only with difficulty",
+                                        "option4":" 3 = Very strong drive to perform behavior, must be carried to completion, can only delay with difficulty",
+                                        "option5":" 4 = Drive to perform behavior experienced as completely involuntary and over-powering, rarely able to even momentarily delay activity. "
+                                        }
+                                    
+                                    
+                                
+                                
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    ]

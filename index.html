@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCD Test</title>
+    <meta name="description" content="Take the Ybocs OCD Test to assess and understand your Obsessive Compulsive Disorder symptoms. Our comprehensive questionnaire provides insights into your mental health.">
+    <meta name="keywords" content="Ybocs, OCD, Obsessive Compulsive Disorder, mental health, psychological test, Ybocs OCD Test">
+    <meta name="author" content="Krishna Aggarwal">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- <style>
+        /* Add styling for the complete and incomplete classes */
+        fieldset.complete {
+            border: 2px solid #8BC34A; /* Green */
+            border-radius: 10px;
+            padding: 10px;
+            transition: border 0.3s ease;
+        }
+
+        fieldset.incomplete {
+            border: 2px solid #F44336; /* Red */
+            border-radius: 10px;
+            padding: 10px;
+            transition: border 0.3s ease;
+        }
+    </style> -->
+</head>
+<body>
+
+<h1>Obsessive Compulsive Disorder Test</h1>
+
+<form id="questionForm">
+    <!-- Your form questions go here (generated dynamically) -->
+</form>
+
+<!-- Display result on the same page -->
+<div id="resultContainer"></div>
+
+<!-- Reset button -->
+<button id="resetButton">Reset</button>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var form = document.getElementById('questionForm');
+        var jsonData;
+
+        // Fetch the combined JSON data
+        fetch('YbocsO.json')
+            .then(response => response.json())
+            .then(data => {
+                jsonData = data;
+                createForm(jsonData);
+            })
+            .catch(error => console.error('Error fetching YbocsO.json:', error));
+
+        function createForm(jsonData) {
+            jsonData.forEach(function (questionData, questionIndex) {
+                var fieldset = document.createElement('fieldset');
+                var legendDiv = document.createElement('div'); // Alternative to legend
+                legendDiv.className = 'legend-div'; // Add a class for styling
+                legendDiv.textContent = questionData.question;
+                fieldset.appendChild(legendDiv);
+
+                for (var optionIndex = 1; optionIndex <= 5; optionIndex++) {
+                    var label = document.createElement('label');
+                    var input = document.createElement('input');
+                    input.type = 'radio';
+                    input.name = 'q' + (questionIndex + 1);
+                    input.value = optionIndex - 1; // Assigning 0 to 4 as per your scoring rule
+                    input.required = true; // Making the question mandatory
+                    label.appendChild(input);
+                    label.appendChild(document.createTextNode(' ' + questionData['option' + optionIndex]));
+                    label.appendChild(document.createElement('br'));
+                    fieldset.appendChild(label);
+                }
+
+                form.appendChild(fieldset);
+
+                // Add event listener to each radio group to check for completeness
+                fieldset.addEventListener('change', function () {
+                    checkCompleteness();
+                });
+            });
+
+            var submitButton = document.createElement('input');
+            submitButton.type = 'button'; // Change type to button
+            submitButton.value = 'Submit';
+            form.appendChild(submitButton);
+
+            submitButton.addEventListener('click', function () {
+                calculateResult();
+            });
+
+            // Reset button functionality
+            var resetButton = document.getElementById('resetButton');
+            resetButton.addEventListener('click', function () {
+                resetForm();
+            });
+        }
+
+        function checkCompleteness() {
+            var radioGroups = document.querySelectorAll('fieldset');
+            radioGroups.forEach(function (radioGroup) {
+                var isGroupComplete = Array.from(radioGroup.querySelectorAll('input[type=radio]')).some(function (radio) {
+                    return radio.checked;
+                });
+
+                if (isGroupComplete) {
+                    radioGroup.classList.remove('incomplete');
+                    radioGroup.classList.add('complete');
+                } else {
+                    radioGroup.classList.remove('complete');
+                    radioGroup.classList.add('incomplete');
+                }
+            });
+        }
+
+        function calculateResult() {
+            var resultContainer = document.getElementById('resultContainer');
+            var totalScore = 0;
+            var maxScore = jsonData.length * 4; // Assuming each question has 4 points
+
+            // Check if all questions are answered
+            var isFormComplete = Array.from(document.querySelectorAll('input[type=radio]:required')).every(function (radioGroup) {
+                return Array.from(radioGroup.closest('fieldset').querySelectorAll('input[type=radio]')).some(function (radio) {
+                    return radio.checked;
+                });
+            });
+
+            if (!isFormComplete) {
+                resultContainer.innerHTML = '<p style="color: red;">Please answer all questions before submitting.</p>';
+                return;
+            }
+
+            // Sum up the scores from the form data
+            var formData = new FormData(form);
+            formData.forEach(function (value) {
+                totalScore += parseInt(value);
+            });
+
+            // Determine the severity level based on the total score
+            var severityLevel = getSeverityLevel(totalScore);
+
+            // Display the result heading
+            var resultHeading = document.createElement('h2');
+            resultHeading.textContent =  severityLevel;
+            resultHeading.id = severityLevel.replace(/\s/g, ''); // Remove spaces for ID
+
+            // Display the score
+            var scoreText = document.createElement('h3');
+            scoreText.textContent = 'Your Score: ' + totalScore + '/' + maxScore;
+
+            // Clear previous result and display new result
+            resultContainer.innerHTML = '';
+            resultContainer.appendChild(resultHeading);
+            resultContainer.appendChild(scoreText);
+        }
+
+        function resetForm() {
+            form.reset();
+
+            // Clear result container
+            var resultContainer = document.getElementById('resultContainer');
+            resultContainer.innerHTML = '';
+
+            // Remove styling classes from fieldsets
+            var fieldsets = document.querySelectorAll('fieldset');
+            fieldsets.forEach(function (fieldset) {
+                fieldset.classList.remove('complete', 'incomplete');
+            });
+        }
+
+        function getSeverityLevel(score) {
+            if (score < 7) {
+                return 'Subclinical';
+            } else if (score < 16) {
+                return 'Mild Case';
+            } else if (score < 24) {
+                return 'Moderate Case';
+            } else if (score < 32) {
+                return 'Severe Case';
+            } else {
+                return 'Extreme Case';
+            }
+        }
+    });
+</script>
+
+</body>
+</html>
